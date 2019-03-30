@@ -10,6 +10,9 @@ module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+  
+    # 表示のみ東京に。DBに保存される時刻はUTC
+    config.time_zone = 'Tokyo'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
