@@ -1,24 +1,20 @@
-= form_for @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      ul
-        - @user.errors.full_messages.each do |message|
-          li = message
+- if user.errors.present?
+  ul#error_explanation
+    - user.errors.full_messages.each do |message|
+      li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :image
-    = f.text_field :image
-  .field
-    = f.label :is_enabled
-    = f.check_box :is_enabled
-  .field
-    = f.label :password
-    = f.text_field :password
-  .actions = f.submit
+= form_with model: user, local: true  do |form|
+  .form-group
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
+  .form-group
+    = form.label :email
+    = form.email_field :email, class: 'form-control'
+  .form-group
+    = form.label :password
+    = form.password_field :password, class: 'form-control'
+  .form-group
+    = form.label :password_confirmation
+    = form.password_field :password_confirmation, class: 'form-control'
+  .actions
+    = form.submit nil, class: 'btn btn-primary' 
