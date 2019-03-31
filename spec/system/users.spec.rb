@@ -1,7 +1,7 @@
 require 'rails_helper'
-
+ 
 describe '辞書機能、flash機能確認', type: :system do
-  let(:correct_user) { FactoryBot.build(:user, password: 'password', password_confirmation: 'password') }
+  let(:correct_user) { FactoryBot.build(:user) }
   let(:incorrect_user) { FactoryBot.build(:user, password: 'notpass', password_confirmation: 'password') }
 
   describe 'リダイレクト後に表示される文言の確認' do
