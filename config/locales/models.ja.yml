@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models: 
+      user: 'ユーザー'
+    attributes:
+      user:
+        name: '名前'
+        email: 'メールアドレス'
+        image: 'プロフィール画像'
+        password: 'パスワード'
+        password_confirmation: 'パスワード再入力'
+        created_at: '登録日時'
+        updated_at: '更新日時'
+        is_enabled: 'アカウント状態'
