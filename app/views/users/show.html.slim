@@ -10,7 +10,7 @@ table.table.table-hover
       td= @user.email
     tr
       th= User.human_attribute_name(:image)
-      td= image_tag @user.image if @user.image.attached?
+      td= image_tag @user.icon if @user.image.attached?
     tr
       th= User.human_attribute_name(:created_at)
       td= I18n.l @user.created_at
