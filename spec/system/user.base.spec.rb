@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'それぞれのアクションが正常に動作するかチェック' do
   let!(:correct_user) { FactoryBot.create(:user) }
 
